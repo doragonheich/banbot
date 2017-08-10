@@ -1,0 +1,12 @@
+const Discord = require("discord.js")
+const Bot = new Discord.Client()
+var prefix = ";;"
+ 
+const Webhook = require("webhook-discord")
+const Hook = new Webhook("YOUR WEBHOOK URL")
+ 
+Bot.on("message", (msg) => {
+    if(msg.content.startsWith(prefix)){
+        Hook.info(Bot.user.username, msg.author.username + " por favor dirígete al canal #musica para utilizar los comandos de FredBoat (El Rumpy).")
+    }
+})
